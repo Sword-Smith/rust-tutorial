@@ -1,12 +1,22 @@
+#[path = "./ciphertext.rs"]
 mod ciphertext;
 use self::ciphertext::Ciphertext;
 
-mod polynomial;
-mod polynomial_quotient_ring;
+// #[path = "./polynomial.rs"]
+// mod polynomial;
+// use self::polynomial::Polynomial;
+
+// #[path = "./polynomial_quotient_ring.rs"]
+// mod polynomial_quotient_ring;
+// use self::polynomial_quotient_ring::PolynomialQuotientRing;
+
+#[path = "./public_key.rs"]
 mod public_key;
+use self::public_key::Polynomial;
+use self::public_key::PublicKey;
 
 fn encrypt<'a>(pk: &'a PublicKey<'a>, plain_text_modulus: i128, pt: i128) -> Ciphertext<'a> {
-    let e1 = polynomial::Polynomial::gen_normal_poly(pk.a.pqr);
+    let e1 = Polynomial::gen_normal_poly(pk.a.pqr);
     // println!("e1: {}", e1);
     let e2 = Polynomial::gen_normal_poly(pk.a.pqr);
     // println!("e2: {}", e2);

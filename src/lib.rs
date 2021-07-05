@@ -7,8 +7,8 @@ mod flow_of_control;
 mod formatted_print;
 mod functions;
 mod hello_world;
-mod homomorphic_encryption;
 mod primitives;
+mod scoping_rules;
 mod types;
 
 pub fn my_library_function() -> Result<()> {
@@ -55,8 +55,18 @@ pub fn my_library_function() -> Result<()> {
     println!("\n\n*****Running functions*****");
     functions::methods::methods();
     functions::closures::closures();
-    println!("\n\n*****Homomorphic encryption*****");
-    homomorphic_encryption::test();
+    println!("\n\n*****Scoping rules*****");
+    scoping_rules::raii::scoping_rules();
+    scoping_rules::to_drop::to_drop();
+    scoping_rules::ownership_and_moves::ownership_and_moves();
+    scoping_rules::mutability::mutability();
+    scoping_rules::partial_moves::partial_moves();
+    scoping_rules::borrowing::borrowing();
+    scoping_rules::borrowing_mutability::borrowing_mutability();
+    scoping_rules::aliasing::aliasing();
+    scoping_rules::the_ref_pattern::the_ref_pattern();
+    scoping_rules::lifetimes::lifetimes();
+
     Ok(())
 }
 

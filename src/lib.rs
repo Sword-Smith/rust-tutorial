@@ -66,6 +66,7 @@ pub fn my_library_function() -> Result<()> {
     scoping_rules::aliasing::aliasing();
     scoping_rules::the_ref_pattern::the_ref_pattern();
     scoping_rules::lifetimes::lifetimes();
+    scoping_rules::lifetime_annotations::lifetime_annotations();
     scoping_rules::lifetime_rules_functions::lifetime_rules_functions();
     scoping_rules::lifetime_rules_methods::lifetime_rules_methods();
     scoping_rules::lifetime_rules_structs::lifetime_rules_structs();

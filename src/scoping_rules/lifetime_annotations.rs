@@ -1,12 +1,14 @@
 // `print_refs` takes two references to `i32` which have different
 // lifetimes `'a` and `'b`. These two lifetimes must both be at
 // least as long as the function `print_refs`.
+#[allow(clippy::needless_lifetimes)]
 fn print_refs<'a, 'b>(x: &'a i32, y: &'b i32) {
     println!("x is {} and y is {}", x, y);
 }
 
 // A function which takes no arguments, but has a lifetime parameter `'a`.
 // What does this lifetime parameter mean?
+#[allow(clippy::extra_unused_lifetimes)]
 fn failed_borrow<'a>() {
     let _x = 12;
 
@@ -22,7 +24,7 @@ fn failed_borrow<'a>() {
     println!("_x = {}", _x);
 }
 
-fn main() {
+pub fn lifetime_annotations() {
     // Create variables to be borrowed below.
     let (four, nine) = (4, 9);
     // Borrows (`&`) of both variables are passed into the function.

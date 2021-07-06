@@ -26,7 +26,7 @@ pub fn lifetime_rules_static() {
 
         println!("coerced_static: {}", coerced_static);
 
-        let b: &i32 = coerced_static;
+        let _b: &i32 = coerced_static;
     }
 
     println!("NUM: {} stays accessible!", NUM);

@@ -11,10 +11,13 @@ fn failed_borrow<'a>() {
     let _x = 12;
 
     // ERROR: `_x` does not live long enough
+    // but `_x` *does* live as long as the function
+    // body, but
     let _y: &i32 = &_x; // Works
 
     // The below line does not work since ???
     // let y: &'a i32 = &_x; // Does not work
+    // A short lifetime cannot be coerced into a longer one.
 
     println!("_x = {}", _x);
 }

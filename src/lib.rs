@@ -66,6 +66,13 @@ pub fn my_library_function() -> Result<()> {
     scoping_rules::aliasing::aliasing();
     scoping_rules::the_ref_pattern::the_ref_pattern();
     scoping_rules::lifetimes::lifetimes();
+    scoping_rules::lifetime_rules_functions::lifetime_rules_functions();
+    scoping_rules::lifetime_rules_methods::lifetime_rules_methods();
+    scoping_rules::lifetime_rules_structs::lifetime_rules_structs();
+    scoping_rules::lifetime_rules_traits::lifetime_rules_traits();
+    scoping_rules::lifetime_rules_bounds::lifetime_rules_bounds();
+    scoping_rules::lifetime_rules_coercion::lifetime_rules_coercion();
+    scoping_rules::lifetime_rules_static::lifetime_rules_static();
 
     Ok(())
 }

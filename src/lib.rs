@@ -7,6 +7,7 @@ mod flow_of_control;
 mod formatted_print;
 mod functions;
 mod hello_world;
+mod imported_types;
 mod primitives;
 mod scoping_rules;
 mod types;
@@ -74,6 +75,8 @@ pub fn my_library_function() -> Result<()> {
     scoping_rules::lifetime_rules_bounds::lifetime_rules_bounds();
     scoping_rules::lifetime_rules_coercion::lifetime_rules_coercion();
     scoping_rules::lifetime_rules_static::lifetime_rules_static();
+    println!("\n\n*****Imported types*****");
+    imported_types::bigint::bigint();
 
     Ok(())
 }
